@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YAMA LOKESH REDDY | Portfolio</title>
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <script type="text/javascript" src="https://cdn.j
+  sdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Dynamic Background -->
+  <div class="fixed-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar glass">
+    <div class="logo">Lokesh<span class="dot">.</span></div>
+    <div class="nav-toggle" id="nav-toggle">
+      <i class="bx bx-menu-alt-right"></i>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#banner" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- Banner Section -->
+  <section id="banner" class="banner section-padding"style="padding:30px;">
+    <div class="banner-content" data-aos="fade-up">
+      <div class="badge">Full Stack Developer</div>
+      <h1>Building the <br><span class="gradient-text">Digital Future</span></h1>
+      <p>I craft high-performance websites and web applications with stunning designs and seamless functionality.
+        Transforming ideas into digital reality.</p>
+
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">Let's Talk <i class="bx bx-right-arrow-alt"></i></a>
+        <a href="#projects" class="btn btn-secondary">View Work</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <h3>20+</h3>
+          <p>Projects</p>
+        </div>
+        <div class="stat-item">
+          <h3>10+</h3>
+          <p>Technologies</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-visual" data-tilt>
+      <div class="glass-card profile-card">
+        <img src="images/WhatsApp Image 2026-02-08 at 12.10.09 AM.jpeg" alt="Lokesh Reddy" class="profile-img" />
+        <div class="floating-badge badge-1"><i class="bx bxl-react"></i> React</div>
+        <div class="floating-badge badge-2"><i class="bx bxl-nodejs"></i> Node</div>
+        <div class="floating-badge badge-3"><i class="bx bxl-php"></i> PHP</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about section-padding">
+    <div class="container">
+      <div class="section-header center">
+        <span class="subtitle">Who I Am</span>
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text glass-card" data-aos="fade-right">
+          <p>I'm a passionate Full Stack Developer capable of designing and developing responsive websites and web apps.
+            My expertise spans both frontend utilizing <strong>HTML, CSS, JavaScript, React, and Bootstrap</strong>, and
+            backend with <strong>Node.js and PHP</strong>.</p>
+          <p>I maintain databases using <strong>MySQL and MongoDB</strong>. I'm experienced with Git & GitHub for
+            version control. I love tackling complex problems and learning new technologies to produce high-quality
+            digital solutions.</p>
+
+          <div class="social-links">
+            <a href="https://github.com/lokeshreddyyama" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/lokesh-reddy-yama-88863831a/" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.hackerrank.com/profile/yamalokeshreddy1" target="_blank"><i
+                class="fa-brands fa-hackerrank"></i></a>
+          </div>
+        </div>
+
+        <div class="education-grid" data-aos="fade-left">
+          <div class="edu-card glass-card">
+            <span class="year">2022 - Present</span>
+            <h3>B.Tech (CSE)</h3>
+            <p>Vel Tech University</p>
+            <span class="grade">CGPA: 9.21</span>
+          </div>
+          <div class="edu-card glass-card">
+            <span class="year">2020 - 2022</span>
+            <h3>Intermediate</h3>
+            <p>Narayana Junior College</p>
+            <span class="grade">91%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section-padding">
+    <div class="container">
+      <div class="section-header center">
+        <span class="subtitle">My Arsenal</span>
+        <h2>Technical Skills</h2>
+      </div>
+
+      <div class="skills-wrapper">
+        <div class="skill-category">
+          <h3><i class="bx bx-code-alt"></i> Frontend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>HTML5</span><span>95%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 95%; background: var(--color-html);"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>CSS3</span><span>90%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%; background: var(--color-css);"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%; background: var(--color-js);"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Bootstrap</span><span>75%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 75%; background: var(--color-bs);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="bx bx-server"></i> Backend & Tools</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>PHP</span><span>85%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%; background: var(--color-php);"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>MySQL</span><span>85%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%; background: var(--color-sql);"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Java</span><span>80%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%; background: var(--color-java);"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Git/GitHub</span><span>70%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%; background: var(--color-git);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects section-padding">
+    <div class="container">
+      <div class="section-header center">
+        <span class="subtitle">Portfolio</span>
+        <h2>Recent Works</h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card glass-card" data-tilt>
+          <div class="project-img-wrapper">
+            <img src="./images/BLOG01.jpg" alt="Blogs Website">
+            <div class="overlay">
+              <a href="https://blogs-website651.infinityfree.me/index1.php" target="_blank" class="btn-icon"><i
+                  class="bx bx-link-external"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Blogs Website</h4>
+            <p>A clean, responsive personal blog using HTML, CSS, JS, Bootstrap, MySQL, and PHP.</p>
+            <div class="tags">
+
+              <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-card" data-tilt>
+          <div class="project-img-wrapper">
+            <img src="./images/digital.jpg" alt="Digital Marketing">
+            <div class="overlay">
+              <a href="https://lokeshreddyyama.github.io/Digital-website/" target="_blank" class="btn-icon"><i
+                  class="bx bx-link-external"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Digital Marketing</h4>
+            <p>Responsive digital marketing website designed to help businesses grow audience engagement.</p>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass-card" data-tilt>
+          <div class="project-img-wrapper">
+            <img src="./images/coffee.jpg" alt="Coffee Shop">
+            <div class="overlay">
+              <a href="https://lokeshreddyyama.github.io/Coffeshop-Website/" target="_blank" class="btn-icon"><i
+                  class="bx bx-link-external"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Coffee Shop</h4>
+            <p>Visually appealing landing page with smooth scroll effects.</p>
+            <div class="tags">
+              <span>UI/UX</span><span>Animation</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card glass-card" data-tilt>
+          <div class="project-img-wrapper">
+            <img src="./images/restaurant.png" alt="Restaurant Website">
+            <div class="overlay">
+              <a href="https://lokeshreddyyama.github.io/Restaurant-website/" target="_blank" class="btn-icon"><i
+                  class="bx bx-link-external"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h4>Restaurant App</h4>
+            <p>User-friendly restaurant site focused on seamless booking and customer interaction.</p>
+            <div class="tags">
+              <span>Frontend</span><span>Booking</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services section-padding">
+    <div class="container">
+      <div class="section-header center">
+        <span class="subtitle">What I Offer</span>
+        <h2>My Services</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass-card">
+          <div class="icon-box"><i class="bx bx-palette"></i></div>
+          <h3>Web Design</h3>
+          <p>Modern and clean UI/UX designs using Figma and latest CSS frameworks.</p>
+        </div>
+        <div class="service-card glass-card">
+          <div class="icon-box"><i class="bx bx-code-block"></i></div>
+          <h3>Frontend Dev</h3>
+          <p>Responsive, interactive websites using HTML5, CSS3, JavaScript and React.</p>
+        </div>
+        <div class="service-card glass-card">
+          <div class="icon-box"><i class="bx bx-line-chart"></i></div>
+          <h3>SEO Optimization</h3>
+          <p>Boosting visibility with semantic HTML and performance optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section-padding">
+    <div class="container">
+      <div class="section-header center">
+        <span class="subtitle">Get In Touch</span>
+        <h2>Contact Me</h2>
+      </div>
+
+      <div class="contact-wrapper glass-card">
+        <div class="contact-info">
+          <h3>Let's collaborate</h3>
+          <p>Have a project in mind? Update me with the details.</p>
+          <div class="info-item">
+            <i class="bx bx-envelope"></i>
+            <span>lokeshreddy.1831151@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <i class="bx bx-map"></i>
+            <span>India</span>
+          </div>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="1234567890">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width" onclick="sendEmail(event)">Send Message</button>
+          <div id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container center">
+      <p>&copy; 2025 Yama Lokesh Reddy. Crafted with <i class="bx bxs-heart" style="color: var(--color-primary)"></i>
+      </p>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Project Image" />
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
