@@ -4,197 +4,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YAMA LOKESH REDDY | Portfolio</title>
+  <meta name="description" content="Yama Lokesh Reddy - Full Stack Developer specializing in React, Node.js, PHP and MySQL. Building high-performance web applications with stunning designs." />
+  <meta name="keywords" content="Full Stack Developer, React, Node.js, PHP, MySQL, Portfolio, Web Developer India" />
+  <meta name="author" content="Yama Lokesh Reddy" />
+  <title>Lokesh Reddy | Full Stack Developer</title>
 
   <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="./css/style.css" />
-  <script type="text/javascript" src="https://cdn.j
-  sdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
+  <!-- Canvas Particle Background -->
+  <canvas id="particles-canvas"></canvas>
 
-  <!-- Dynamic Background -->
+  <!-- Ambient Gradient Background -->
   <div class="fixed-bg">
-    <div class="blob blob-1"></div>
-
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="noise-overlay"></div>
   </div>
 
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
   <!-- Navigation -->
-  <nav class="navbar glass">
-    <div class="logo">Lokesh<span class="dot">.</span></div>
-    <div class="nav-toggle" id="nav-toggle">
-      <i class="bx bx-menu-alt-right"></i>
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-bracket">&lt;</span>Lokesh<span class="logo-dot">/</span><span class="logo-bracket">&gt;</span>
+    </a>
+    <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <ul class="nav-links">
-      <li><a href="#banner" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
     </ul>
   </nav>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu-overlay"></div>
-
-  <!-- Banner Section -->
-  <section id="banner" class="banner section-padding"style="padding:30px;">
-    <div class="banner-content" data-aos="fade-up">
-      <div class="badge">Full Stack Developer</div>
-      <h1>Building the <br><span class="gradient-text">Digital Future</span></h1>
-      <p>I craft high-performance websites and web applications with stunning designs and seamless functionality.
-        Transforming ideas into digital reality.</p>
-
-      <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary">Let's Talk <i class="bx bx-right-arrow-alt"></i></a>
-        <a href="#projects" class="btn btn-secondary">View Work</a>
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-content" data-reveal>
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-greeting">Hi, I'm</span>
+          <span class="hero-name">Lokesh Reddy</span>
+          <span class="hero-role">
+            <span class="role-prefix">I build </span>
+            <span class="typewriter" id="typewriter"></span>
+            <span class="cursor-blink">|</span>
+          </span>
+        </h1>
+        <p class="hero-description">
+          A passionate <strong>Full Stack Developer</strong> from India, crafting pixel-perfect, high-performance web applications that leave lasting impressions.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary" id="hero-cta-contact">
+            <span>Let's Talk</span>
+            <i class="bx bx-right-arrow-alt"></i>
+          </a>
+          <a href="#projects" class="btn btn-outline" id="hero-cta-work">
+            <span>View My Work</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1Udc_A6Y-KxTgkETy9L5yhdLIyUlyjN9v/view?usp=drivesdk" class="btn btn-ghost" id="hero-cta-cv" target="_blank">
+            <i class="bx bx-download"></i>
+            <span>Download Resume</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="7">0</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="10">0</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="8">0</span><span class="stat-num-suffix">.80</span>
+            <span class="stat-label">CGPA</span>
+          </div>
+        </div>
       </div>
 
-      <div class="stats">
-        <div class="stat-item">
-          <h3>5+</h3>
-          <p>Projects</p>
+      <div class="hero-visual" data-reveal-right>
+        <div class="hero-card-wrap">
+          <div class="profile-glow"></div>
+          <div class="profile-ring ring-1"></div>
+          <div class="profile-ring ring-2"></div>
+          <div class="profile-frame">
+            <img src="images/WhatsApp Image 2026-02-08 at 12.10.09 AM.jpeg" alt="Lokesh Reddy - Full Stack Developer" class="profile-photo" />
+            <div class="profile-overlay-tag">
+              <i class="bx bxs-circle pulse-green"></i>
+              Open to Work
+            </div>
+          </div>
+
+          <!-- Floating Tech Badges -->
+          <div class="tech-badge badge-react" aria-label="React">
+            <i class="bx bxl-react"></i>
+            <span>React</span>
+          </div>
+          <div class="tech-badge badge-php" aria-label="PHP">
+            <i class="bx bxl-php"></i>
+            <span>PHP</span>
+          </div>
+          <div class="tech-badge badge-mysql" aria-label="MySQL">
+            <i class="bx bxs-data"></i>
+            <span>MySQL</span>
+          </div>
         </div>
-        <div class="stat-item">
-          <h3>10+</h3>
-          <p>Technologies</p>
+
+        <!-- Social Quick Links -->
+        <div class="hero-socials">
+          <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" aria-label="GitHub" class="social-pill">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/lokesh-reddy-yama-88863831a/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-pill">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.hackerrank.com/profile/yamalokeshreddy1" target="_blank" rel="noopener" aria-label="HackerRank" class="social-pill">
+            <i class="fa-brands fa-hackerrank"></i>
+          </a>
+          <a href="mailto:lokeshreddy.1831151@gmail.com" aria-label="Email" class="social-pill">
+            <i class="bx bx-envelope"></i>
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="banner-visual" data-tilt>
-      <div class="glass-card profile-card">
-        <img src="images/WhatsApp Image 2026-02-08 at 12.10.09 AM.jpeg" alt="Lokesh Reddy" class="profile-img" />
-        <div class="floating-badge badge-1"><i class="bx bxl-react"></i> React</div>
-        <div class="floating-badge badge-2"><i class="bx bxl-nodejs"></i> Node</div>
-        <div class="floating-badge badge-3"><i class="bx bxl-php"></i> PHP</div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow">
+        <i class="bx bx-chevron-down"></i>
       </div>
-    </div>
+    </a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about section-padding">
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="section about-section">
     <div class="container">
-      <div class="section-header center">
-        <span class="subtitle">Who I Am</span>
-        <h2>About Me</h2>
+      <div class="section-header" data-reveal>
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <p class="section-subtitle">Passionate developer, problem solver, continuous learner</p>
       </div>
 
       <div class="about-grid">
-        <div class="about-text glass-card" data-aos="fade-right">
-          <p>I'm a passionate Full Stack Developer capable of designing and developing responsive websites and web apps.
-            My expertise spans both frontend utilizing <strong>HTML, CSS, JavaScript, React, and Bootstrap</strong>, and
-            backend with <strong>Node.js and PHP</strong>.</p>
-          <p>I maintain databases using <strong>MySQL and MongoDB</strong>. I'm experienced with Git & GitHub for
-            version control. I love tackling complex problems and learning new technologies to produce high-quality
-            digital solutions.</p>
+        <div class="about-left" data-reveal>
+          <div class="about-card glass-card">
+            <div class="about-text">
+              <p>I'm a <strong>Full Stack Developer</strong> currently pursuing my B.Tech in Computer Science at Vel Tech University. I love crafting seamless digital experiences — from pixel-perfect frontends to robust backend systems.</p>
+              <p>My expertise spans <strong>HTML, CSS, JavaScript, React, Bootstrap</strong> on the frontend, and <strong>Node.js & PHP</strong> on the backend, with database expertise in <strong>MySQL & MongoDB</strong>.</p>
+              <p>When I'm not coding, I'm exploring new frameworks, contributing to open source, or brainstorming innovative web solutions.</p>
+            </div>
 
-          <div class="social-links">
-            <a href="https://github.com/lokeshreddyyama" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/lokesh-reddy-yama-88863831a/" target="_blank"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.hackerrank.com/profile/yamalokeshreddy1" target="_blank"><i
-                class="fa-brands fa-hackerrank"></i></a>
-          </div>
-        </div>
-
-        <div class="education-grid" data-aos="fade-left">
-          <div class="edu-card glass-card">
-            <span class="year">2023 - Present</span>
-            <h3>B.Tech (CSE)</h3>
-            <p>Vel Tech University</p>
-            <span class="grade">CGPA: 9.21</span>
-          </div>
-          <div class="edu-card glass-card">
-            <span class="year">2021 - 2023</span>
-            <h3>Intermediate</h3>
-            <p>Narayana Junior College</p>
-            <span class="grade">81%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills section-padding">
-    <div class="container">
-      <div class="section-header center">
-        <span class="subtitle">My Arsenal</span>
-        <h2>Technical Skills</h2>
-      </div>
-
-      <div class="skills-wrapper">
-        <div class="skill-category">
-          <h3><i class="bx bx-code-alt"></i> Frontend</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>HTML5</span><span>95%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 95%; background: var(--color-html);"></div>
+            <div class="about-info-grid">
+              <div class="info-chip">
+                <i class="bx bx-map-pin"></i>
+                <span>India</span>
+              </div>
+              <div class="info-chip">
+                <i class="bx bx-book-open"></i>
+                <span>B.Tech CSE</span>
+              </div>
+              <div class="info-chip">
+                <i class="bx bx-code-curly"></i>
+                <span>Full Stack Dev</span>
+              </div>
+              <div class="info-chip">
+                <i class="bx bx-star"></i>
+                <span>CGPA 8.80</span>
               </div>
             </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>CSS3</span><span>90%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 90%; background: var(--color-css);"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>JavaScript</span><span>80%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%; background: var(--color-js);"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Bootstrap</span><span>75%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 75%; background: var(--color-bs);"></div>
-              </div>
+
+            <div class="about-socials">
+              <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" class="about-social-btn" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/lokesh-reddy-yama-88863831a/" target="_blank" rel="noopener" class="about-social-btn linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+                LinkedIn
+              </a>
+              <a href="https://www.hackerrank.com/profile/yamalokeshreddy1" target="_blank" rel="noopener" class="about-social-btn hackerrank" aria-label="HackerRank">
+                <i class="fa-brands fa-hackerrank"></i>
+                HackerRank
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="skill-category">
-          <h3><i class="bx bx-server"></i> Backend & Tools</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>PHP</span><span>85%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 85%; background: var(--color-php);"></div>
+        <div class="about-right" data-reveal-right>
+          <!-- Education Timeline -->
+          <div class="timeline-card glass-card">
+            <h3 class="timeline-heading"><i class="bx bx-graduation"></i> Education</h3>
+            <div class="timeline">
+              <div class="timeline-item active">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2023 – Present</span>
+                  <h4>B.Tech in Computer Science</h4>
+                  <p>Vel Tech University, Chennai</p>
+                  <div class="timeline-badge">CGPA: 8.80 / 10</div>
+                </div>
               </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>MySQL</span><span>85%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 85%; background: var(--color-sql);"></div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">2021 – 2023</span>
+                  <h4>Intermediate (MPC)</h4>
+                  <p>Narayana Junior College</p>
+                  <div class="timeline-badge">Score: 92%</div>
+                </div>
               </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Java</span><span>80%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%; background: var(--color-java);"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Git/GitHub</span><span>70%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%; background: var(--color-git);"></div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-year">Achievements</span>
+                  <h4>Certifications & Achievements</h4>
+                  <p>HackerRank Certified • Full Stack Projects</p>
+                  <div class="timeline-badge">3-Star Coder</div>
+                </div>
               </div>
             </div>
           </div>
@@ -203,229 +257,605 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects section-padding">
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section id="skills" class="section skills-section">
     <div class="container">
-      <div class="section-header center">
-        <span class="subtitle">Portfolio</span>
-        <h2>Recent Works</h2>
+      <div class="section-header" data-reveal>
+        <span class="section-tag">My Arsenal</span>
+        <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+        <p class="section-subtitle">Technologies I work with on a daily basis</p>
       </div>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card glass-card" data-tilt>
-          <div class="project-img-wrapper">
-            <img src="./images/BLOG01.jpg" alt="Blogs Website">
-            <div class="overlay">
-              <a href="https://blogs-cards.infinityfree.me/index1.php" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Blogs Website</h4>
-            <p>A clean, responsive personal blog using HTML, CSS, JS, Bootstrap, MySQL, and PHP.</p>
-            <div class="tags">
+      <div class="skills-tabs" data-reveal>
+        <button class="tab-btn active" data-tab="all">All</button>
+        <button class="tab-btn" data-tab="frontend">Frontend</button>
+        <button class="tab-btn" data-tab="backend">Backend</button>
+        <button class="tab-btn" data-tab="tools">Tools</button>
+      </div>
 
-              <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
+      <div class="skills-grid" id="skills-grid">
+        <!-- Frontend -->
+        <div class="skill-card glass-card" data-category="frontend" data-reveal>
+          <div class="skill-icon html-icon"><i class="fab fa-html5"></i></div>
+          <h4>HTML5</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="95">
+              <div class="skill-fill" style="--target: 95%"></div>
             </div>
+            <span class="skill-pct">95%</span>
           </div>
-        </article>
-        <!-- Project 2 -->
-<article class="project-card glass-card" data-tilt>
-          <div class="project-img-wrapper">
-            <img src="./images/Harveterlogo.jpg" alt="Digital Marketing">
-            <div class="overlay">
-              <a href="https://harvester-payment.infinityfree.me/" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Harvester Payment Tracker</h4>
-            <p>Responsive Harvester Payment Tracker website designed to help businesses grow audience engagement.</p>
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>FullStack Design</span>
-            </div>
-          </div>
-        </article>
-        <!-- Project 3 -->
-        <article class="project-card glass-card" data-tilt>
+          <span class="skill-level expert">Expert</span>
+        </div>
 
-          <div class="project-img-wrapper">
-            <img src="./images/digital.jpg" alt="Digital Marketing">
-            <div class="overlay">
-              <a href="https://lokeshreddyyama.github.io/Digital-website/" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
+        <div class="skill-card glass-card" data-category="frontend" data-reveal>
+          <div class="skill-icon css-icon"><i class="fab fa-css3-alt"></i></div>
+          <h4>CSS3</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="90">
+              <div class="skill-fill" style="--target: 90%"></div>
             </div>
+            <span class="skill-pct">90%</span>
           </div>
-          <div class="project-info">
-            <h4>Digital Marketing</h4>
-            <p>Responsive digital marketing website designed to help businesses grow audience engagement.</p>
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>Design</span>
-            </div>
-          </div>
-        </article>
-         <article class="project-card glass-card" data-tilt>
+          <span class="skill-level expert">Expert</span>
+        </div>
 
-          <div class="project-img-wrapper">
-            <img src="./images/Studentlogo.jpg" alt="Student Database">
-            <div class="overlay">
-              <a href="https://studentdatabase-orpin.vercel.app/" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
+        <div class="skill-card glass-card" data-category="frontend" data-reveal>
+          <div class="skill-icon js-icon"><i class="fab fa-js"></i></div>
+          <h4>JavaScript</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80">
+              <div class="skill-fill" style="--target: 80%"></div>
             </div>
+            <span class="skill-pct">80%</span>
           </div>
-          <div class="project-info">
-            <h4>Student Database</h4>
-            <p>Responsive student database website designed to help educational institutions manage student information.Did project using Reactjs.</p>
-            <div class="tags">
-              <span>Reactjs</span>
-            </div>
-          </div>
-        </article>
+          <span class="skill-level advanced">Advanced</span>
+        </div>
 
-        <!-- Project 5 -->
-        <article class="project-card glass-card" data-tilt>
-          <div class="project-img-wrapper">
-            <img src="./images/coffee.jpg" alt="Coffee Shop">
-            <div class="overlay">
-              <a href="https://lokeshreddyyama.github.io/Coffeshop-Website/" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
+        <div class="skill-card glass-card" data-category="frontend" data-reveal>
+          <div class="skill-icon react-icon"><i class="fab fa-react"></i></div>
+          <h4>React.js</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75">
+              <div class="skill-fill" style="--target: 75%"></div>
             </div>
+            <span class="skill-pct">75%</span>
           </div>
-          <div class="project-info">
-            <h4>Coffee Shop</h4>
-            <p>Visually appealing landing page with smooth scroll effects.</p>
-            <div class="tags">
-              <span>UI/UX</span><span>Animation</span>
-            </div>
-          </div>
-        </article>
+          <span class="skill-level advanced">Advanced</span>
+        </div>
 
-        <!-- Project 6 -->
-         <article class="project-card glass-card" data-tilt>
-          <div class="project-img-wrapper">
-            <img src="./images/restaurant.png" alt="Restaurant Website">
-            <div class="overlay">
-              <a href="https://lokeshreddyyama.github.io/Restaurant-website/" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
+        <div class="skill-card glass-card" data-category="frontend" data-reveal>
+          <div class="skill-icon bs-icon"><i class="fab fa-bootstrap"></i></div>
+          <h4>Bootstrap</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80">
+              <div class="skill-fill" style="--target: 80%"></div>
             </div>
+            <span class="skill-pct">80%</span>
           </div>
-          <div class="project-info">
-            <h4>Restaurant App</h4>
-            <p>User-friendly restaurant site focused on seamless booking and customer interaction.</p>
-            <div class="tags">
-              <span>Frontend</span><span>Booking</span>
-            </div>
-          </div>
-        </article>
+          <span class="skill-level advanced">Advanced</span>
+        </div>
 
-    <article class="project-card glass-card" data-tilt>
-        <div class="project-img-wrapper">
-            <img src="./images/Jobs_Portal.jpg" alt="Job Portal">
-            <div class="overlay">
-              <a href="https://lokeshreddyyama.github.io/Job-Portal/" target="_blank" class="btn-icon"><i
-                  class="bx bx-link-external"></i></a>
+        <!-- Backend -->
+        <div class="skill-card glass-card" data-category="backend" data-reveal>
+          <div class="skill-icon php-icon"><i class="fab fa-php"></i></div>
+          <h4>PHP</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85">
+              <div class="skill-fill" style="--target: 85%"></div>
             </div>
+            <span class="skill-pct">85%</span>
           </div>
-          <div class="project-info">
-            <h4>Job Portal</h4>
-            <p>Responsive job portal website designed to help job seekers and employers connect.</p>
-            <div class="tags">
-              <span>HTML</span><span>CSS</span><span>Design</span>
+          <span class="skill-level expert">Expert</span>
+        </div>
+<div class="skill-card glass-card" data-category="tools" data-reveal>
+          <div class="skill-icon mongo-icon"><i class="fa-solid fa-c"></i></div>
+          <h4>C</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="65">
+              <div class="skill-fill" style="--target: 80%"></div>
             </div>
+            <span class="skill-pct">80%</span>
           </div>
-        </article>
+          <span class="skill-level intermediate">Advanced</span>
+        </div>
+
+        <div class="skill-card glass-card" data-category="backend" data-reveal>
+          <div class="skill-icon java-icon"><i class="fab fa-java"></i></div>
+          <h4>Java</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80">
+              <div class="skill-fill" style="--target: 80%"></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+          <span class="skill-level advanced">Advanced</span>
+        </div>
+
+        <!-- Tools / DB -->
+        <div class="skill-card glass-card" data-category="tools" data-reveal>
+          <div class="skill-icon mysql-icon"><i class="bx bxs-data"></i></div>
+          <h4>MySQL</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85">
+              <div class="skill-fill" style="--target: 85%"></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <span class="skill-level expert">Expert</span>
+        </div>
+
+        <div class="skill-card glass-card" data-category="tools" data-reveal>
+          <div class="skill-icon git-icon"><i class="fab fa-git-alt"></i></div>
+          <h4>Git & GitHub</h4>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75">
+              <div class="skill-fill" style="--target: 75%"></div>
+            </div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <span class="skill-level advanced">Advanced</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services section-padding">
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section id="projects" class="section projects-section">
     <div class="container">
-      <div class="section-header center">
-        <span class="subtitle">What I Offer</span>
-        <h2>My Services</h2>
+      <div class="section-header" data-reveal>
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+        <p class="section-subtitle">Real-world applications built with modern technologies</p>
+      </div>
+
+      <div class="project-filters" data-reveal>
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="react">React</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1: Blogs Website -->
+        <article class="project-card glass-card" data-category="fullstack" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/BLOG01.jpg" alt="Blogs Website - PHP MySQL Bootstrap" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://blogs-cards.infinityfree.me/index1.php" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">01</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Blogs Website</h3>
+              <span class="project-type">Full Stack</span>
+            </div>
+            <p class="project-desc">A clean, feature-rich personal blog platform with user authentication, CRUD operations, and a responsive design. Built with PHP, MySQL, and Bootstrap.</p>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Harvester Payment Tracker -->
+        <article class="project-card glass-card featured" data-category="fullstack" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/Harveterlogo.jpg" alt="Harvester Payment Tracker" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://harvester-payment.infinityfree.me/" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">02</span>
+            <span class="featured-badge">⭐ Featured</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Harvester Payment Tracker</h3>
+              <span class="project-type">Full Stack</span>
+            </div>
+            <p class="project-desc">A comprehensive business payment tracking system helping agricultural businesses manage and track harvester payments with real-time dashboards.</p>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Full Stack</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Digital Marketing -->
+        <article class="project-card glass-card" data-category="frontend" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/digital.jpg" alt="Digital Marketing Website" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://lokeshreddyyama.github.io/Digital-website/" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama/Digital-website" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">03</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Digital Marketing</h3>
+              <span class="project-type">Frontend</span>
+            </div>
+            <p class="project-desc">Responsive digital marketing agency website with modern animations, smooth scroll effects, and compelling UI to help businesses grow their online presence.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Student Database -->
+        <article class="project-card glass-card" data-category="react" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/Studentlogo.jpg" alt="Student Database React App" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://studentdatabase-orpin.vercel.app/" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">04</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Student Database</h3>
+              <span class="project-type">React</span>
+            </div>
+            <p class="project-desc">Responsive student management system built with React.js, enabling educational institutions to efficiently manage student records and information.</p>
+            <div class="project-tags">
+              <span class="tag">React.js</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Vercel</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Coffee Shop -->
+        <article class="project-card glass-card" data-category="frontend" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/coffee.jpg" alt="Coffee Shop Landing Page" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://lokeshreddyyama.github.io/Coffeshop-Website/" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama/Coffeshop-Website" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">05</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Coffee Shop</h3>
+              <span class="project-type">Frontend</span>
+            </div>
+            <p class="project-desc">Visually stunning coffee shop landing page with parallax scrolling, smooth animations, and an inviting aesthetic to drive customer engagement.</p>
+            <div class="project-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">CSS Animations</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Restaurant App -->
+        <article class="project-card glass-card" data-category="frontend" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/restaurant.png" alt="Restaurant Booking Website" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://lokeshreddyyama.github.io/Restaurant-website/" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama/Restaurant-website" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">06</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Restaurant App</h3>
+              <span class="project-type">Frontend</span>
+            </div>
+            <p class="project-desc">User-friendly restaurant website with online table booking, menu display, and seamless customer interaction features for modern dining experiences.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Booking System</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7: Job Portal -->
+        <article class="project-card glass-card" data-category="frontend" data-reveal>
+          <div class="project-img-wrap">
+            <img src="./images/Jobs_Portal.jpg" alt="Job Portal Website" loading="lazy">
+            <div class="project-overlay">
+              <div class="project-overlay-content">
+                <a href="https://lokeshreddyyama.github.io/Job-Portal/" target="_blank" rel="noopener" class="project-link-btn" aria-label="View live site">
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <a href="https://github.com/lokeshreddyyama/Job-Portal" target="_blank" rel="noopener" class="project-link-btn" aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <span class="project-number">07</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header-row">
+              <h3 class="project-title">Job Portal</h3>
+              <span class="project-type">Frontend</span>
+            </div>
+            <p class="project-desc">Responsive job portal connecting seekers and employers with an intuitive interface for browsing listings, filtering jobs, and managing applications.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects-cta" data-reveal>
+        <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fab fa-github"></i>
+          See All on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES SECTION ==================== -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-tag">What I Offer</span>
+        <h2 class="section-title">My <span class="highlight">Services</span></h2>
+        <p class="section-subtitle">End-to-end web development solutions tailored to your needs</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card glass-card">
-          <div class="icon-box"><i class="bx bx-palette"></i></div>
-          <h3>Web Design</h3>
-          <p>Modern and clean UI/UX designs using Figma and latest CSS frameworks.</p>
+        <div class="service-card glass-card" data-reveal>
+          <div class="service-icon-wrap">
+            <div class="service-icon">
+              <i class="bx bx-palette"></i>
+            </div>
+            <div class="service-number">01</div>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>Modern, intuitive interface designs that delight users. From wireframes to pixel-perfect implementations using Figma and cutting-edge CSS.</p>
+          <ul class="service-features">
+            <li><i class="bx bx-check"></i> Responsive Design</li>
+            <li><i class="bx bx-check"></i> Figma Prototyping</li>
+            <li><i class="bx bx-check"></i> User Research</li>
+          </ul>
         </div>
-        <div class="service-card glass-card">
-          <div class="icon-box"><i class="bx bx-code-block"></i></div>
-          <h3>Frontend Dev</h3>
-          <p>Responsive, interactive websites using HTML5, CSS3, JavaScript and React.</p>
+
+        <div class="service-card glass-card" data-reveal>
+          <div class="service-icon-wrap">
+            <div class="service-icon">
+              <i class="bx bx-code-block"></i>
+            </div>
+            <div class="service-number">02</div>
+          </div>
+          <h3>Frontend Development</h3>
+          <p>Responsive, interactive, and lightning-fast web applications using HTML5, CSS3, JavaScript, React and Bootstrap with flawless cross-browser compatibility.</p>
+          <ul class="service-features">
+            <li><i class="bx bx-check"></i> React.js Apps</li>
+            <li><i class="bx bx-check"></i> Performance Optimized</li>
+            <li><i class="bx bx-check"></i> Mobile First</li>
+          </ul>
         </div>
-        <div class="service-card glass-card">
-          <div class="icon-box"><i class="bx bx-line-chart"></i></div>
+
+        <div class="service-card glass-card" data-reveal>
+          <div class="service-icon-wrap">
+            <div class="service-icon">
+              <i class="bx bx-server"></i>
+            </div>
+            <div class="service-number">03</div>
+          </div>
+          <h3>Backend Development</h3>
+          <p>Robust and scalable server-side solutions using Node.js and PHP with secure APIs, efficient database design with MySQL and MongoDB.</p>
+          <ul class="service-features">
+            <li><i class="bx bx-check"></i> REST API Design</li>
+            <li><i class="bx bx-check"></i> Database Design</li>
+            <li><i class="bx bx-check"></i> Authentication Systems</li>
+          </ul>
+        </div>
+
+        <div class="service-card glass-card" data-reveal>
+          <div class="service-icon-wrap">
+            <div class="service-icon">
+              <i class="bx bx-line-chart"></i>
+            </div>
+            <div class="service-number">04</div>
+          </div>
           <h3>SEO Optimization</h3>
-          <p>Boosting visibility with semantic HTML and performance optimization.</p>
+          <p>Boosting your digital visibility through semantic HTML, performance optimization, Core Web Vitals improvements, and technical SEO best practices.</p>
+          <ul class="service-features">
+            <li><i class="bx bx-check"></i> Core Web Vitals</li>
+            <li><i class="bx bx-check"></i> Semantic HTML</li>
+            <li><i class="bx bx-check"></i> Speed Optimization</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact section-padding">
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="section contact-section">
     <div class="container">
-      <div class="section-header center">
-        <span class="subtitle">Get In Touch</span>
-        <h2>Contact Me</h2>
+      <div class="section-header" data-reveal>
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="highlight">Collaborate</span></h2>
+        <p class="section-subtitle">Have a project in mind? Let's build something amazing together.</p>
       </div>
 
-      <div class="contact-wrapper glass-card">
-        <div class="contact-info">
-          <h3>Let's collaborate</h3>
-          <p>Have a project in mind? Update me with the details.</p>
-          <div class="info-item">
-            <i class="bx bx-envelope"></i>
-            <span>lokeshreddy.1831151@gmail.com</span>
+      <div class="contact-grid">
+        <div class="contact-info-panel glass-card" data-reveal>
+          <div class="contact-greeting">
+            <div class="contact-avatar">
+              <img src="images/WhatsApp Image 2026-02-08 at 12.10.09 AM.jpeg" alt="Lokesh Reddy">
+              <div class="avatar-status"></div>
+            </div>
+            <div>
+              <h3>Lokesh Reddy</h3>
+              <p>Full Stack Developer</p>
+            </div>
           </div>
-          <div class="info-item">
-            <i class="bx bx-map"></i>
-            <span>India</span>
+
+          <p class="contact-intro">I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+
+          <div class="contact-details">
+            <a href="mailto:lokeshreddy.1831151@gmail.com" class="contact-detail-item">
+              <div class="detail-icon">
+                <i class="bx bx-envelope"></i>
+              </div>
+              <div>
+                <span class="detail-label">Email</span>
+                <span class="detail-value">lokeshreddy.1831151@gmail.com</span>
+              </div>
+            </a>
+            <div class="contact-detail-item">
+              <div class="detail-icon">
+                <i class="bx bx-map"></i>
+              </div>
+              <div>
+                <span class="detail-label">Location</span>
+                <span class="detail-value">India 🇮🇳</span>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <div class="detail-icon">
+                <i class="bx bx-time"></i>
+              </div>
+              <div>
+                <span class="detail-label">Availability</span>
+                <span class="detail-value">Open to opportunities</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" aria-label="GitHub" class="contact-social"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/lokesh-reddy-yama-88863831a/" target="_blank" rel="noopener" aria-label="LinkedIn" class="contact-social"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.hackerrank.com/profile/yamalokeshreddy1" target="_blank" rel="noopener" aria-label="HackerRank" class="contact-social"><i class="fa-brands fa-hackerrank"></i></a>
           </div>
         </div>
 
-        <form id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" required placeholder="John Doe">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="john@example.com">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" pattern="[0-9]{10}" placeholder="1234567890">
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" rows="4" required placeholder="Tell me about your project..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary full-width" onclick="sendEmail(event)">Send Message</button>
-          <div id="form-status"></div>
-        </form>
+        <div class="contact-form-panel glass-card" data-reveal-right>
+          <h3 class="form-title">Send Me a Message</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name <span class="required">*</span></label>
+                <div class="input-wrap">
+                  <i class="bx bx-user"></i>
+                  <input type="text" id="name" name="name" required placeholder="John Doe" autocomplete="name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <div class="input-wrap">
+                  <i class="bx bx-envelope"></i>
+                  <input type="email" id="email" name="email" required placeholder="john@example.com" autocomplete="email">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <div class="input-wrap">
+                <i class="bx bx-chat"></i>
+                <input type="text" id="subject" name="subject" placeholder="Project Discussion">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span class="required">*</span></label>
+              <div class="input-wrap textarea-wrap">
+                <i class="bx bx-edit"></i>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project, ideas or just say hi..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn" id="submit-btn" onclick="sendEmail(event)">
+              <span class="btn-text">Send Message</span>
+              <i class="bx bx-send"></i>
+              <div class="btn-loader" style="display:none">
+                <div class="spinner"></div>
+              </div>
+            </button>
+            <div id="form-status"></div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="container center">
-      <p>&copy; 2025 Yama Lokesh Reddy. Crafted with <i class="bx bxs-heart" style="color: var(--color-primary)"></i>
-      </p>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-top">
+        <a href="#home" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>Lokesh<span class="logo-dot">/</span><span class="logo-bracket">&gt;</span>
+        </a>
+        <p class="footer-tagline">Building the digital future, one line at a time.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/lokeshreddyyama" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/lokesh-reddy-yama-88863831a/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.hackerrank.com/profile/yamalokeshreddy1" target="_blank" rel="noopener" aria-label="HackerRank"><i class="fa-brands fa-hackerrank"></i></a>
+          <a href="mailto:lokeshreddy.1831151@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>Yama Lokesh Reddy</strong>. Crafted with <i class="bx bxs-heart" style="color:#ff4d6d"></i> and lots of ☕</p>
+        <a href="#home" class="back-to-top" aria-label="Back to top">
+          <i class="bx bx-up-arrow-alt"></i>
+        </a>
+      </div>
     </div>
   </footer>
-
-  <div id="lightbox" class="lightbox hidden">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="Project Image" />
-    <a class="prev">&#10094;</a>
-    <a class="next">&#10095;</a>
-  </div>
 
   <script src="./js/script.js"></script>
 </body>
