@@ -55,6 +55,7 @@
       <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
       <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
       <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      <li><a href="#" class="nav-link nav-intro-btn" id="nav-intro-video" data-section="intro"><i class="bx bx-play-circle"></i> Intro</a></li>
     </ul>
   </nav>
   <div class="mobile-overlay" id="mobile-overlay"></div>
@@ -215,6 +216,23 @@
                 HackerRank
               </a>
             </div>
+
+            <!-- Self Introduction Video Card -->
+            <div class="intro-video-card" id="intro-video-card" data-reveal>
+              <div class="intro-video-thumb" id="intro-video-trigger" role="button" tabindex="0" aria-label="Play self introduction video">
+                <video class="intro-video-preview" src="./images/self_intro.mp4" poster="./images/professional_photo.png" muted playsinline preload="none"></video>
+                <div class="intro-video-overlay">
+                  <div class="intro-play-btn" id="intro-play-btn">
+                    <i class="bx bx-play"></i>
+                  </div>
+                  <div class="intro-video-label">
+                    <span class="intro-video-tag"><i class="bx bxs-circle pulse-green"></i> Self Introduction</span>
+                    <p>Watch my 60-second intro</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -857,7 +875,55 @@
     </div>
   </footer>
 
+  <!-- ==================== VIDEO MODAL ==================== -->
+  <div class="video-modal-backdrop" id="video-modal-backdrop" role="dialog" aria-modal="true" aria-label="Self Introduction Video">
+    <div class="video-modal-box">
+      <button class="video-modal-close" id="video-modal-close" aria-label="Close video">
+        <i class="bx bx-x"></i>
+      </button>
+      <div class="video-modal-header">
+        <span class="intro-video-tag"><i class="bx bxs-circle pulse-green"></i> Self Introduction</span>
+        <h3>Meet Lokesh Reddy</h3>
+      </div>
+      <div class="video-modal-player">
+        <video id="intro-modal-video" src="./images/self_intro.mp4" controls playsinline preload="none">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
   <script src="./js/script.js"></script>
+
+  <script>
+    // ========== Self Intro Video Modal Logic ==========
+    const videoTrigger   = document.getElementById('intro-video-trigger');
+    const navIntroBtn    = document.getElementById('nav-intro-video');
+    const modalBackdrop  = document.getElementById('video-modal-backdrop');
+    const modalClose     = document.getElementById('video-modal-close');
+    const modalVideo     = document.getElementById('intro-modal-video');
+    const previewVideo   = document.querySelector('.intro-video-preview');
+
+    function openVideoModal() {
+      modalBackdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => { modalVideo.play(); }, 300);
+    }
+
+    function closeVideoModal() {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+      modalBackdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    videoTrigger.addEventListener('click', openVideoModal);
+    videoTrigger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openVideoModal(); });
+    navIntroBtn.addEventListener('click', e => { e.preventDefault(); openVideoModal(); });
+    modalClose.addEventListener('click', closeVideoModal);
+    modalBackdrop.addEventListener('click', e => { if (e.target === modalBackdrop) closeVideoModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideoModal(); });
+  </script>
 </body>
 
 </html>
